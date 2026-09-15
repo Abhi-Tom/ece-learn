@@ -16,7 +16,7 @@ int main()
 
         for( int i = 0 ; i < 20 ; i++)
         {
-                printf("%d,%d\n" , samples[i] , i);
+                printf("%d,%d\n" , i , samples[i]);
         }
 	
 	return 0;
