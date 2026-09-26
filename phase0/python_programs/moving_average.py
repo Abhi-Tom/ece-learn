@@ -1,7 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
 
-data = np.loadtxt("noisy_sensor.csv",delimiter=",",skiprows=1)
+DATA_DIR = Path(__file__).resolve().parent.parent / "data_files"
+
+data = np.loadtxt( DATA_DIR / "noisy_sensor.csv", delimiter="," , skiprows=1 )
 
 sample_index = data[:,0]
 noisy_values = data[:,1]
@@ -41,5 +44,4 @@ plt.title("Smoothing synthetic sensor readings")
 plt.grid(True)
 plt.legend()
 plt.tight_layout()
-plt.savefig("moving_average.png", dpi=150)
-plt.show()
+plt.savefig(DATA_DIR / "moving_average.png", dpi=150)

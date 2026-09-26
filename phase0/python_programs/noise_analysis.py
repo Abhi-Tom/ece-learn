@@ -1,7 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
 
-data = np.loadtxt("sensor.csv", delimiter=",", skiprows=1)
+DATA_DIR = Path(__file__).resolve().parent.parent / "data_files"
+
+data = np.loadtxt(DATA_DIR / "sensor.csv", delimiter=",", skiprows=1)
 sample_index = data[:,0]
 clean_values = data[:,1]
 sample_rate = 10.0
@@ -57,5 +60,5 @@ plt.title("Clean and noisy synthetic sensor signals")
 plt.grid(True)
 plt.legend()
 plt.tight_layout()
-plt.savefig("noise_comparison.png", dpi=150)
+plt.savefig(DATA_DIR / "noise_comparison.png", dpi=150)
 plt.show()

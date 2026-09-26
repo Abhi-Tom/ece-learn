@@ -1,8 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
 
+DATA_DIR = Path(__file__).resolve().parent.parent / "data_files"
 
-data = np.loadtxt("sensor.csv",delimiter = "," , skiprows=1)
+data = np.loadtxt(DATA_DIR / "sensor.csv", delimiter=",", skiprows=1)
 
 sample_index = data[:, 0]
 values = data[:, 1]
@@ -22,5 +24,5 @@ plt.ylabel("Sensor Value")
 plt.title("Synthetic Triangular sensor signal")
 plt.grid(True)
 plt.tight_layout()
-plt.savefig("sensor_plot.png", dpi =150)
+plt.savefig(DATA_DIR / "sensor_plot.png", dpi=150)
 plt.show()
