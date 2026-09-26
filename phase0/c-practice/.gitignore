@@ -1,8 +1,9 @@
 temperature
-sensor_csv
+sensor.csv
+noisy_sensor.csv
 array_pointer
 sensor_plot.png
 noise_comparison.png
-
+moving_average.png
 
 
